@@ -69,10 +69,20 @@ public:
     int getSeed() const;
     bool isUsingRandomSeed() const;
 
+
+    // Private Methods //
+private:
+    inline void resetRange(int min, int max);
+
+
     // iVars //
-public:
+private:
+    //Housekeeping.
     int  m_seed;
     bool m_isUsingRandomSeed;
+    //Random.
+    std::mt19937                       m_rnd;
+    std::uniform_int_distribution<int> m_dist;
 };
 
 

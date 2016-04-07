@@ -40,6 +40,57 @@
 
 //Header
 #include "../include/Random.h"
+//std
+#include <cstdlib>
+#include <limits>
 
 //Usings.
 USING_NS_CORERANDOM;
+
+
+// Enums / Constants / Typdefs //
+const int Random::kRandomSeed = -1;
+
+// CTOR/DTOR //
+Random::Random(int seed) :
+    m_seed((seed == Random::kRandomSeed) ? time(nullptr) : seed), //
+    m_isUsingRandomSeed(seed == kRandomSeed),
+    m_rnd(m_seed)
+{
+    //Empty...
+}
+
+
+// Public Methods //
+int Random::next()
+{
+    resetRange(0, std::numeric_limits<int>::max());
+    return m_dist(m_rnd);
+}
+int Random::next(int max)
+{
+    resetRange(0, max);
+    return m_dist(m_rnd);
+}
+int Random::next(int min, int max)
+{
+    resetRange(min, max);
+    return m_dist(m_rnd);
+}
+
+int Random::getSeed() const
+{
+    return m_seed;
+}
+bool Random::isUsingRandomSeed() const
+{
+    return m_isUsingRandomSeed;
+}
+
+
+// Private Methods //
+inline void Random::resetRange(int min, int max)
+{
+    if(m_dist.min() != min || m_dist.max() != max)
+        m_dist.param(std::uniform_int_distribution<int>::param_type(min, max));
+}
