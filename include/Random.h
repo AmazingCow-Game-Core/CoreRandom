@@ -50,13 +50,17 @@ NS_CORERANDOM_BEGIN
 
 class Random
 {
-    // Enums / Constants / Typdefs //
+    // Enums / Constants / Typedefs //
 public:
     ///@brief A meta value to indicate to Random()
     ///that it should use a random seed.
     ///@see Random(), getSeed(), isUsingRandomSeed().
     static const int kRandomSeed;
 
+    ///@brief Typedef to reduce verbosity.
+    typedef std::mt19937                       NumberGeneratorType;
+    ///@brief Typedef to reduce verbosity.
+    typedef std::uniform_int_distribution<int> IntegerDistributionType;
 
 
     // CTOR/DTOR //
@@ -69,7 +73,7 @@ public:
     Random(int seed = kRandomSeed);
 
 
-    // Public Methods //
+    // Generation Methods //
 public:
     ///@brief Generate a random integer between [0, std::numeric_limits<int>::max()].
     ///@returns An integer in [0, std::numeric_limits<int>::max()] range.
@@ -92,10 +96,31 @@ public:
     int next(int min, int max);
 
 
+    // Helper Methods //
+public:
+    ///@brief Gets the reference for the internal number generator.
+    ///@returns A reference for the internal number generator.
+    ///@see NumberGeneratorType.
+    NumberGeneratorType& getNumberGenerator();
+    ///@brief Gets the constant reference for the internal number generator.
+    ///@returns A constant reference for the internal number generator.
+    ///@see NumberGeneratorType.
+    const NumberGeneratorType& getNumberGenerator() const;
+
+    ///@brief Gets the reference for the internal integer distribution.
+    ///@returns A reference for the internal integer distribution.
+    ///@see IntegerDistributionType.
+    IntegerDistributionType& getIntDistribution();
+    ///@brief Gets the constant reference for the internal integer distribution.
+    ///@returns A constant reference for the internal integer distribution.
+    ///@see IntegerDistributionType.
+    const IntegerDistributionType& getIntDistribution() const;
+
+
     ///@brief Gets the actual seed used.
     ///@returns The actual seed used in this object - If Random was created
-    ///using kRandomSeed it will the choosen seed, otherwise will return the
-    ///argurment used in the CTOR.
+    ///using kRandomSeed it will the chosen seed, otherwise will return the
+    ///argument used in the CTOR.
     int getSeed() const;
 
     ///@brief Checks if CTOR was initialized with kRandomSeed.
@@ -114,8 +139,8 @@ private:
     int  m_seed;
     bool m_isUsingRandomSeed;
     //Random.
-    std::mt19937                       m_rnd;
-    std::uniform_int_distribution<int> m_dist;
+    NumberGeneratorType     m_rnd;
+    IntegerDistributionType m_dist;
 };
 
 

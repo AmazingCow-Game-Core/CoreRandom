@@ -61,31 +61,55 @@ Random::Random(int seed) :
 }
 
 
-// Public Methods //
+// Generation Methods //
 int Random::next()
 {
     resetRange(0, std::numeric_limits<int>::max());
     return m_dist(m_rnd);
 }
+
 int Random::next(int max)
 {
     resetRange(0, max);
     return m_dist(m_rnd);
 }
+
 int Random::next(int min, int max)
 {
     resetRange(min, max);
     return m_dist(m_rnd);
 }
 
+
+// Helper Methods //
+Random::NumberGeneratorType&  Random::getNumberGenerator()
+{
+    return m_rnd;
+}
+const Random::NumberGeneratorType&  Random::getNumberGenerator() const
+{
+    return m_rnd;
+}
+
+Random::IntegerDistributionType&  Random::getIntDistribution()
+{
+    return m_dist;
+}
+const Random::IntegerDistributionType&  Random::getIntDistribution() const
+{
+    return m_dist;
+}
+
 int Random::getSeed() const
 {
     return m_seed;
 }
+
 bool Random::isUsingRandomSeed() const
 {
     return m_isUsingRandomSeed;
 }
+
 
 
 // Private Methods //

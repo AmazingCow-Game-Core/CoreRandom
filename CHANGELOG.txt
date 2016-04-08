@@ -1,2 +1,9 @@
+[Version v0.2.0] - April 8, 2016
+    - Add typedefs to the Number Generator and Integer Distribution.
+    - Add methods to get the internal Number Generator and Integer Distribution.
+    - Fix some typos on comments.
+    - Change the format of CHANGELOG - Now each topic will start with a dash (-)
+
+--------------------------------------------------------------------------------
 [Version v0.1.0] - April 7, 2016 **HAPPY BIRTHDAY MY BELOVED BROTHER**
-Initial release :D
+    - Initial release :D
