@@ -28,7 +28,7 @@
 //        *VERY* happy to see our work being used by other people. :)         //
 //        The email is: acknowledgment_opensource@AmazingCow.com              //
 //     3. Altered source versions must be plainly marked as such,             //
-//        and must notbe misrepresented as being the original software.       //
+//        and must not be misrepresented as being the original software.      //
 //     4. This notice may not be removed or altered from any source           //
 //        distribution.                                                       //
 //     5. Most important, you must have fun. ;)                               //

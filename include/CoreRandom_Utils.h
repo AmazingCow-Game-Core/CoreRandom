@@ -28,7 +28,7 @@
 //        *VERY* happy to see our work being used by other people. :)         //
 //        The email is: acknowledgment_opensource@AmazingCow.com              //
 //     3. Altered source versions must be plainly marked as such,             //
-//        and must notbe misrepresented as being the original software.       //
+//        and must not be misrepresented as being the original software.      //
 //     4. This notice may not be removed or altered from any source           //
 //        distribution.                                                       //
 //     5. Most important, you must have fun. ;)                               //
@@ -52,8 +52,8 @@
 //The core version number.
 #define COW_CORERANDOM_VERSION_MAJOR    "0"
 #define COW_CORERANDOM_VERSION_MINOR    "2"
-#define COW_CORERANDOM_VERSION_REVISION "0"
+#define COW_CORERANDOM_VERSION_REVISION "1"
 
-#define COW_CORERANDOM_VERSION "0.2.0"
+#define COW_CORERANDOM_VERSION "0.2.1"
 
 #endif // defined(__CoreRandom_include_CoreRandom_Utils_h__) //
