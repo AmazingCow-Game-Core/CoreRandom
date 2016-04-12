@@ -3,6 +3,7 @@ Core Random
 Made with <3 by [Amazing Cow](http://www.amazingcow.com).
 
 <!-- ####################################################################### -->
+<!-- ####################################################################### -->
 
 ## Intro:
 
@@ -85,6 +86,9 @@ underlying ```std::uniform_int_distribution::param_type```.
 We **DID NOT** any type of measurement to check how bad is this type of use - 
 So use the ```CoreRandom::Random``` in this way by your own risk.
 
+
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## Files:
@@ -97,6 +101,8 @@ Here is a list of them:
 * ```Random.h```
 
 
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## More info:
@@ -108,18 +114,36 @@ Anyway if you didn't understand something let us know sending a mail to
 name of this repo.
 
 
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## License:
+
 This software is released under GPLv3.
 
 
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## TODO:
-Check the TODO file.
+
+Check the TODO file for general things.
+
+This projects uses the COWTODO tags.   
+So install [cowtodo](http://www.github.com/AmazingCow-Tools/COWTODO.html) and run:
+
+``` bash
+$ cd CoreRandom
+$ cowtodo 
+```
+
+That's gonna give you all things to do :D.
 
 
+
+<!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
 ## Others:
