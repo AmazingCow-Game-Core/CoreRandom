@@ -1,3 +1,35 @@
+--------------------------------------------------------------------------------
+| Version 0.2.x                                                                |
+--------------------------------------------------------------------------------
+[Version v0.2.2] - April 30, 2016
+-- General --
+    - Add some documentation.
+    - New README.
+    - Add doxygen stuff.
+
+-- Source --
+    include/CoreRandom_Utils.h
+        - Update version numbers.
+    include/Random.h
+        - Add more documentation.
+
+-- Info Files --
+    README.md
+        - Rewrite the README to consistency with other
+          Amazing Cow's READMEs.
+
+    CHANGELOG.txt
+        - Split the CHANGELOG entry in sections.
+
+    mainpage.dox
+        - Add the mainpage doxygen documentation.
+
+-- Others --
+    Doxyfile
+        - Add the doxygen configuration.
+
+
+--------------------------------------------------------------------------------
 [Version v0.2.1] - April 11, 2016
     - Fix the misspelled word in license headers.
     - Make some cosmetic changes.
@@ -9,12 +41,16 @@
         - Add info about COWTODO in TODO section.
         - Add separators.
 
+--------------------------------------------------------------------------------
 [Version v0.2.0] - April 8, 2016
     - Add typedefs to the Number Generator and Integer Distribution.
     - Add methods to get the internal Number Generator and Integer Distribution.
     - Fix some typos on comments.
     - Change the format of CHANGELOG - Now each topic will start with a dash (-)
 
+
+--------------------------------------------------------------------------------
+| Version 0.1.x                                                                |
 --------------------------------------------------------------------------------
 [Version v0.1.0] - April 7, 2016 **HAPPY BIRTHDAY MY BELOVED BROTHER**
     - Initial release :D
