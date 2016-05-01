@@ -77,6 +77,7 @@ public:
 public:
     ///@brief Generate a random integer between [0, std::numeric_limits<int>::max()].
     ///@returns An integer in [0, std::numeric_limits<int>::max()] range.
+    ///@note next return is INCLUSIVE.
     ///@see next(int max), next(int min, int max);
     int next();
 
@@ -84,6 +85,7 @@ public:
     ///@param max - The upperbound of the range.
     ///@warning max must be >= 0.
     ///@returns An integer in [0, max] range.
+    ///@note next return is INCLUSIVE.
     ///@see next(), next(int min, int max);
     int next(int max);
 
@@ -92,6 +94,7 @@ public:
     ///@param max - The upperbound of the range.
     ///@warning max >= min.
     ///@returns An integer in [min, max] range.
+    ///@note next return is INCLUSIVE.
     ///@see next(), next(int max);
     int next(int min, int max);
 
