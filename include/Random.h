@@ -90,7 +90,7 @@ public:
     int next(int max);
 
     ///@brief Generate a random integer between [min, max].
-    ///@param max - The lowerbound of the range.
+    ///@param min - The lowerbound of the range.
     ///@param max - The upperbound of the range.
     ///@warning max >= min.
     ///@returns An integer in [min, max] range.
