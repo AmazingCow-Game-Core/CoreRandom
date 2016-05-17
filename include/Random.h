@@ -69,7 +69,7 @@ public:
     ///@param seed - The seed that the random number generator will
     ///be initialized. If seed is kRandomSeed it will be
     ///selected from the system std::time(nullptr).
-    ///@see kRandomSeed, getSeed(), isUsingRandomSeed().
+    ///@see kRandomSeed, reseed(), getSeed(), isUsingRandomSeed().
     Random(int seed = kRandomSeed);
 
 
@@ -119,6 +119,13 @@ public:
     ///@see IntegerDistributionType.
     const IntegerDistributionType& getIntDistribution() const;
 
+
+    ///@brief Reseed object with the target seed.
+    ///@param seed - The seed that the random number generator will
+    ///be initialized. If seed is kRandomSeed it will be
+    ///selected from the system std::time(nullptr).
+    ///@see getSeed(), isUsingRandomSeed().
+    void reseed(int seed = kRandomSeed);
 
     ///@brief Gets the actual seed used.
     ///@returns The actual seed used in this object - If Random was created

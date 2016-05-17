@@ -53,12 +53,9 @@ const int Random::kRandomSeed = -1;
 
 
 // CTOR/DTOR //
-Random::Random(int seed) :
-    m_seed((seed == Random::kRandomSeed) ? time(nullptr) : seed), //
-    m_isUsingRandomSeed(seed == kRandomSeed),
-    m_rnd(m_seed)
+Random::Random(int seed)
 {
-    //Empty...
+    reseed(seed);
 }
 
 
@@ -99,6 +96,17 @@ Random::IntegerDistributionType&  Random::getIntDistribution()
 const Random::IntegerDistributionType&  Random::getIntDistribution() const
 {
     return m_dist;
+}
+
+
+void Random::reseed(int seed /* = kRandomSeed */)
+{
+    m_seed = (seed == Random::kRandomSeed)
+              ? time(nullptr)
+              : seed;
+
+    m_isUsingRandomSeed = (seed == kRandomSeed);
+    m_rnd.seed(m_seed);
 }
 
 int Random::getSeed() const
