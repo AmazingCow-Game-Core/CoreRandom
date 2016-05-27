@@ -1,4 +1,25 @@
 --------------------------------------------------------------------------------
+| Version 0.3.x                                                                |
+--------------------------------------------------------------------------------
+[Version v0.3.0] - April 30, 2016
+-- General -- 
+    - Add new helper methods.
+    
+-- Source --
+    include/CoreRandom_Utils.h
+        - Update the version numbers.
+    
+    include/Random.h
+    src/Random.cpp
+        - Add the nextBool method.
+        - Add a new distribution only to the bool stuff.
+          So we don't need to stay reseting the int distribution
+          every time.
+        - Update the CTOR to do a one time initialization on 
+          the bool distribution.
+    
+    
+--------------------------------------------------------------------------------
 | Version 0.2.x                                                                |
 --------------------------------------------------------------------------------
 [Version v0.2.2] - April 30, 2016
