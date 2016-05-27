@@ -51,9 +51,12 @@
 
 //The core version number.
 #define COW_CORERANDOM_VERSION_MAJOR    "0"
-#define COW_CORERANDOM_VERSION_MINOR    "3"
+#define COW_CORERANDOM_VERSION_MINOR    "4"
 #define COW_CORERANDOM_VERSION_REVISION "0"
 
-#define COW_CORERANDOM_VERSION "0.3.0"
+#define COW_CORERANDOM_VERSION       \
+    COW_CORERANDOM_VERSION_MAJOR "." \
+    COW_CORERANDOM_VERSION_MINOR "." \
+    COW_CORERANDOM_VERSION_REVISION
 
 #endif // defined(__CoreRandom_include_CoreRandom_Utils_h__) //
