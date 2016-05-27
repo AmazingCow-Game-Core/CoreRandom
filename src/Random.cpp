@@ -53,7 +53,8 @@ const int Random::kRandomSeed = -1;
 
 
 // CTOR/DTOR //
-Random::Random(int seed)
+Random::Random(int seed) :
+    m_randomDist(0, 1)
 {
     reseed(seed);
 }
@@ -76,6 +77,11 @@ int Random::next(int min, int max)
 {
     resetRange(min, max);
     return m_dist(m_rnd);
+}
+
+bool Random::nextBool()
+{
+    return static_cast<bool>(m_randomDist(m_rnd));
 }
 
 

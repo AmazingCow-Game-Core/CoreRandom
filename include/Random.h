@@ -99,6 +99,12 @@ public:
     int next(int min, int max);
 
 
+    ///@brief Generate a random bool value.
+    ///@returns A bool value.
+    ///@see next(), next(int max), next(int min, int max);
+    bool nextBool();
+
+
     // Helper Methods //
 public:
     ///@brief Gets the reference for the internal number generator.
@@ -148,9 +154,11 @@ private:
     //Housekeeping.
     int  m_seed;
     bool m_isUsingRandomSeed;
+
     //Random.
     NumberGeneratorType     m_rnd;
     IntegerDistributionType m_dist;
+    IntegerDistributionType m_randomDist;
 };
 
 
