@@ -1,4 +1,18 @@
 --------------------------------------------------------------------------------
+| Version 0.4.x                                                                |
+--------------------------------------------------------------------------------
+v0.4.0 - May 27, 2016
+-- General -- 
+    - Update the COW_CORERANDOM_VERSION define.
+      now it will be the concat of the version components.
+    
+    - Add the update version script 
+      We were forgetting to update the versions.
+      
+    - SINCE NOW WE WILL STOP SAYING THAT WE 
+      UPDATE THE VERSION NUMBERS IN CHANGELOG.
+
+--------------------------------------------------------------------------------
 | Version 0.3.x                                                                |
 --------------------------------------------------------------------------------
 [Version v0.3.0] - May 27, 2016
