@@ -1,38 +1,45 @@
 --------------------------------------------------------------------------------
 | Version 0.4.x                                                                |
 --------------------------------------------------------------------------------
+v0.4.1 - Jun 29, 2016
+-- General --
+    - Now Random class throws a std::invalid_argument
+      exception if the range doesn't satisfies the min < max.
+    - Update documentation.
+
+--------------------------------------------------------------------------------
 v0.4.0 - May 27, 2016
--- General -- 
+-- General --
     - Update the COW_CORERANDOM_VERSION define.
       now it will be the concat of the version components.
-    
-    - Add the update version script 
+
+    - Add the update version script
       We were forgetting to update the versions.
-      
-    - SINCE NOW WE WILL STOP SAYING THAT WE 
+
+    - SINCE NOW WE WILL STOP SAYING THAT WE
       UPDATE THE VERSION NUMBERS IN CHANGELOG.
 
 --------------------------------------------------------------------------------
 | Version 0.3.x                                                                |
 --------------------------------------------------------------------------------
 [Version v0.3.0] - May 27, 2016
--- General -- 
+-- General --
     - Add new helper methods.
-    
+
 -- Source --
     include/CoreRandom_Utils.h
         - Update the version numbers.
-    
+
     include/Random.h
     src/Random.cpp
         - Add the nextBool method.
         - Add a new distribution only to the bool stuff.
           So we don't need to stay reseting the int distribution
           every time.
-        - Update the CTOR to do a one time initialization on 
+        - Update the CTOR to do a one time initialization on
           the bool distribution.
-    
-    
+
+
 --------------------------------------------------------------------------------
 | Version 0.2.x                                                                |
 --------------------------------------------------------------------------------
