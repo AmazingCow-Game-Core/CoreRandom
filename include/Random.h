@@ -85,6 +85,7 @@ public:
     ///@param max - The upperbound of the range.
     ///@warning max must be >= 0.
     ///@returns An integer in [0, max] range.
+    ///@throws std::invalid_argument if max < 0.
     ///@note next return is INCLUSIVE.
     ///@see next(), next(int min, int max);
     int next(int max);
@@ -94,6 +95,7 @@ public:
     ///@param max - The upperbound of the range.
     ///@warning max >= min.
     ///@returns An integer in [min, max] range.
+    ///@throws std::invalid_argument if max < min.
     ///@note next return is INCLUSIVE.
     ///@see next(), next(int max);
     int next(int min, int max);
