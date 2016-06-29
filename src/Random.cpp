@@ -43,6 +43,9 @@
 //std
 #include <cstdlib>
 #include <limits>
+#include <stdexcept>
+#include <string>
+#include <sstream>
 
 //Usings.
 USING_NS_CORERANDOM;
@@ -130,6 +133,17 @@ bool Random::isUsingRandomSeed() const
 // Private Methods //
 inline void Random::resetRange(int min, int max)
 {
+    if(min > max)
+    {
+        std::stringstream ss;
+        ss << "CoreRandom::Random - Invalid range values - "
+           << "min must be <= max - "
+           << "Got min: " << min << " max: " << max;
+
+        throw std::invalid_argument(ss.str());
+    }
+
+
     if(m_dist.min() != min || m_dist.max() != max)
         m_dist.param(std::uniform_int_distribution<int>::param_type(min, max));
 }
