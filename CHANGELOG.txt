@@ -1,6 +1,13 @@
 --------------------------------------------------------------------------------
 | Version 0.4.x                                                                |
 --------------------------------------------------------------------------------
+v0.4.2 - [Jul 16, 2016]
+-- General --
+    - Update the mainpage.dox and README.md to
+      use the correct amazing cow links.
+    - Start using the update_version script.
+
+--------------------------------------------------------------------------------
 v0.4.1 - Jun 29, 2016
 -- General --
     - Now Random class throws a std::invalid_argument
