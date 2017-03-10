@@ -42,6 +42,7 @@
 #include "../include/Random.h"
 //std
 #include <cstdlib>
+#include <ctime>
 #include <limits>
 #include <stdexcept>
 #include <string>
@@ -111,7 +112,7 @@ const Random::IntegerDistributionType&  Random::getIntDistribution() const
 void Random::reseed(int seed /* = kRandomSeed */)
 {
     m_seed = (seed == Random::kRandomSeed)
-              ? time(nullptr)
+              ? std::time(nullptr)
               : seed;
 
     m_isUsingRandomSeed = (seed == kRandomSeed);
