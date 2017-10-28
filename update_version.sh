@@ -29,7 +29,7 @@
 ################################################################################
 PROJECT_NAME="CORERANDOM"
 HEADER_FILE=./include/CoreRandom_Utils.h
-DOXY_FILE=Doxyfile
+DOXY_FILE=./docs/Doxyfile
 
 
 ################################################################################
