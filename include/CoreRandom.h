@@ -18,10 +18,7 @@
 //                                                                            //
 //---------------------------------------------------------------------------~//
 
-#ifndef __CoreRandom_include_CoreRandom_h__
-#define __CoreRandom_include_CoreRandom_h__
+#pragma once
 
 #include "CoreRandom_Utils.h"
 #include "Random.h"
-
-#endif // defined(__CoreRandom_include_CoreRandom_h__) //

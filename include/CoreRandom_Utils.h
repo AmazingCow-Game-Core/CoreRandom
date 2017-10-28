@@ -18,7 +18,7 @@
 //                                                                            //
 //---------------------------------------------------------------------------~//
 
-#define __CoreRandom_include_CoreRandom_Utils_h__
+#pragma once
 
 //All classes of this core is placed inside this namespace.
 //We use MACROS so is easier to change if needed.
@@ -38,4 +38,3 @@
     COW_CORERANDOM_VERSION_MINOR "." \
     COW_CORERANDOM_VERSION_REVISION
 
-#endif // defined(__CoreRandom_include_CoreRandom_Utils_h__) //

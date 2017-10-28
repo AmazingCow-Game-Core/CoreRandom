@@ -18,8 +18,7 @@
 //                                                                            //
 //---------------------------------------------------------------------------~//
 
-#ifndef __CoreRandom_include_Random_h__
-#define __CoreRandom_include_Random_h__
+#pragma once
 
 //std
 #include <random>
@@ -145,4 +144,3 @@ private:
 
 
 NS_CORERANDOM_END
-#endif // defined(__CoreRandom_include_Random_h__) //
