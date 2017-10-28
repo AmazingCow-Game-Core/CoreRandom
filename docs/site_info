@@ -1,0 +1,16 @@
+Title:
+    CoreRandom
+Description:
+    A easy to use random number generator inspired in
+    <a href="https://msdn.microsoft.com/en-us/library/system.random.aspx">
+        C# System.Random
+    </a>
+    class.
+URL:
+    Github, https://github.com/AmazingCow-Libs/CoreRandom
+    Docs, http://www.amazingcow.com/docs/CoreRandom
+Owner:
+    AmazingCow Labs
+Section:
+    Libs
+
