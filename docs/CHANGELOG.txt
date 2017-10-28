@@ -1,11 +1,29 @@
 --------------------------------------------------------------------------------
 | Version 0.4.x                                                                |
 --------------------------------------------------------------------------------
+v0.4.3 - Oct 28, 2017
+-- General --
+    This release updates all license header files, move the info and
+    doxygen files to the docs directory and make some updates to the
+    update_version.sh script.
+
+-- Changed --
+    - Update the license headers to the Amazing Cow's new ones.
+    - Moved from include guards to #pragma once.
+    - A lot of cosmetic changes.
+    - Move the info files to docs folder.
+    - Move the doxygen files to docs folder.
+    - Update the mainpage.dox with the correct links.
+    - Update the update_version.sh script to the correct location of DOXYFILE.
+
+
+--------------------------------------------------------------------------------
 v0.4.2 - [Jul 16, 2016]
 -- General --
     - Update the mainpage.dox and README.md to
       use the correct amazing cow links.
     - Start using the update_version script.
+
 
 --------------------------------------------------------------------------------
 v0.4.1 - Jun 29, 2016
@@ -13,6 +31,7 @@ v0.4.1 - Jun 29, 2016
     - Now Random class throws a std::invalid_argument
       exception if the range doesn't satisfies the min < max.
     - Update documentation.
+
 
 --------------------------------------------------------------------------------
 v0.4.0 - May 27, 2016
