@@ -12,10 +12,9 @@
 //  Date      : Apr 06, 2016                                                  //
 //  License   : GPLv3                                                         //
 //  Author    : n2omatt <n2omatt@amazingcow.com>                              //
-//  Copyright : AmazingCow - 2016, 2017                                       //
+//  Copyright : AmazingCow - 2016 - 2018                                      //
 //                                                                            //
 //  Description :                                                             //
-//                                                                            //
 //---------------------------------------------------------------------------~//
 
 #pragma once
