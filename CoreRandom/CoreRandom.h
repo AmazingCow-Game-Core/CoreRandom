@@ -20,5 +20,8 @@
 
 #pragma once
 
-#include "CoreRandom_Utils.h"
-#include "Random.h"
+//----------------------------------------------------------------------------//
+// Export Headers                                                             //
+//----------------------------------------------------------------------------//
+#include "include/CoreRandom_Utils.h"
+#include "include/Random.h"
