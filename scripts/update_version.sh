@@ -17,9 +17,16 @@
 ##                                                                            ##
 ##  Description :                                                             ##
 ##    Updates the version of the project in the header and doxy files.        ##
-##    This scipts relies that Amazing Cow's update_version program to         ##
-##    be already installed.                                                   ##
+##    This scripts depends upon:                                              ##
+##      - AmazingCow's acow_shellscript_utils                                 ##
+##      - AmazingCow's update_version                                         ##
 ##---------------------------------------------------------------------------~##
+
+##----------------------------------------------------------------------------##
+## Imports                                                                    ##
+##----------------------------------------------------------------------------##
+source /usr/local/src/acow_shellscript_utils.sh
+
 
 ##----------------------------------------------------------------------------##
 ## Vars                                                                       ##
@@ -28,13 +35,13 @@ PROJECT_NAME="CORERANDOM"
 HEADER_FILE=../CoreRandom/include/CoreRandom_Utils.h
 DOXY_FILE=../docs/Doxyfile
 
+
 ##----------------------------------------------------------------------------##
 ## Script                                                                     ##
 ##----------------------------------------------------------------------------##
 ## Since we're using relative paths, make sure that we are
 ## in the correct working directory.
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)";
-cd "$SCRIPT_DIR";
+cd $(get_script_dir);
 
 ## Update.
 update_version $PROJECT_NAME $1 $HEADER_FILE $DOXY_FILE
