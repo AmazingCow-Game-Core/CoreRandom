@@ -1,4 +1,19 @@
 --------------------------------------------------------------------------------
+| Version 0.5.x                                                                |
+--------------------------------------------------------------------------------
+v0.5.0 - Fev 19, 2017
+-- General --
+    - Change the project structure to align with other Amazing Cow's projects
+      and ease the usage of the lib.
+    - Update the copyright years on the license headers.
+    - Start using the CMake to build the lib.
+    - Update the .gitignore.
+    - Update the update_version script.
+      Now it depends on Amazing Cow's acow_shellscript_utils lib.
+    - Update the README.
+
+
+--------------------------------------------------------------------------------
 | Version 0.4.x                                                                |
 --------------------------------------------------------------------------------
 v0.4.3 - Oct 28, 2017

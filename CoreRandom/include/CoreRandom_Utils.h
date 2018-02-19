@@ -35,11 +35,12 @@
 //----------------------------------------------------------------------------//
 // The core version number.
 #define COW_CORERANDOM_VERSION_MAJOR    "0"
-#define COW_CORERANDOM_VERSION_MINOR    "4"
-#define COW_CORERANDOM_VERSION_REVISION "4"
+#define COW_CORERANDOM_VERSION_MINOR    "5"
+#define COW_CORERANDOM_VERSION_REVISION "0"
 
 #define COW_CORERANDOM_VERSION       \
     COW_CORERANDOM_VERSION_MAJOR "." \
     COW_CORERANDOM_VERSION_MINOR "." \
     COW_CORERANDOM_VERSION_REVISION
+
 
