@@ -22,10 +22,8 @@
 
 //std
 #include <random>
-//CoreRandom
-#include "CoreRandom_Utils.h"
 
-NS_CORERANDOM_BEGIN
+namespace acow { namespace Random {
 
 class Random
 {
@@ -206,4 +204,5 @@ private:
     IntegerDistributionType m_randomDist;
 };
 
-NS_CORERANDOM_END
+} // namespace Random
+} // namespace acow
