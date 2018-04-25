@@ -20,10 +20,20 @@
 
 #pragma once
 
-//std
+// std
 #include <random>
+#include <time.h>
+// AmazingCow Libs
+#include "acow/cpp_goodies.h"
 
-namespace acow { namespace Random {
+//------------------------------------------------------------------------------
+// Undefine Windows crap...
+#if (ACOW_OS_IS_WINDOWS) 
+    #undef max
+    #undef min
+#endif
+
+namespace acow { namespace RandomUtils {
 
 class Random
 {
@@ -59,7 +69,11 @@ public:
     ///   be initialized. If seed is kRandomSeed it will be
     ///   selected from the system std::time(nullptr).
     /// @see kRandomSeed, reseed(), getSeed(), isUsingRandomSeed().
-    Random(int seed = kRandomSeed);
+    inline Random(int seed = kRandomSeed) noexcept
+        : m_randomDist(0, 1)
+    {
+        Reseed(seed);
+    }
 
 
     //------------------------------------------------------------------------//
@@ -74,7 +88,12 @@ public:
     /// @note
     ///   next return is INCLUSIVE.
     /// @see next(int max), next(int min, int max);
-    int next();
+    inline int
+    Next() noexcept
+    {
+        ResetRange(0, std::numeric_limits<int>::max());
+        return m_dist(m_rnd);
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -90,7 +109,12 @@ public:
     /// @note
     ///   next return is INCLUSIVE.
     /// @see next(), next(int min, int max);
-    int next(int max);
+    inline int
+    Next(int max) noexcept
+    {
+        ResetRange(0, max);
+        return m_dist(m_rnd);
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -108,7 +132,12 @@ public:
     /// @note
     ///   next return is INCLUSIVE.
     /// @see next(), next(int max);
-    int next(int min, int max);
+    inline int
+    Next(int min, int max) noexcept
+    {
+        ResetRange(min, max);
+        return m_dist(m_rnd);
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -116,7 +145,11 @@ public:
     /// @returns
     ///   A bool value.
     /// @see next(), next(int max), next(int min, int max);
-    bool nextBool();
+    inline bool
+    NextBool() noexcept
+    {
+        return static_cast<bool>(m_randomDist(m_rnd));
+    }
 
 
     //------------------------------------------------------------------------//
@@ -129,7 +162,11 @@ public:
     /// @returns
     ///   A reference for the internal number generator.
     /// @see NumberGeneratorType.
-    NumberGeneratorType& getNumberGenerator();
+    inline NumberGeneratorType&
+    GetNumberGenerator() noexcept
+    {
+        return m_rnd;
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -137,7 +174,11 @@ public:
     /// @returns
     ///   A constant reference for the internal number generator.
     /// @see NumberGeneratorType.
-    const NumberGeneratorType& getNumberGenerator() const;
+    inline const NumberGeneratorType&
+    GetNumberGenerator() const noexcept
+    {
+        return m_rnd;
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -145,7 +186,11 @@ public:
     /// @returns
     ///   A reference for the internal integer distribution.
     /// @see IntegerDistributionType.
-    IntegerDistributionType& getIntDistribution();
+    inline IntegerDistributionType&
+    GetIntDistribution() noexcept
+    {
+        return m_dist;
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -153,7 +198,11 @@ public:
     /// @returns
     ///   A constant reference for the internal integer distribution.
     /// @see IntegerDistributionType.
-    const IntegerDistributionType& getIntDistribution() const;
+    inline const IntegerDistributionType&
+    GetIntDistribution() const noexcept
+    {
+        return m_dist;
+    }
 
 
     ///-------------------------------------------------------------------------
@@ -164,7 +213,16 @@ public:
     ///   be initialized. If seed is kRandomSeed it will be
     ///   selected from the system std::time(nullptr).
     /// @see getSeed(), isUsingRandomSeed().
-    void reseed(int seed = kRandomSeed);
+    inline void
+    Reseed(int seed = kRandomSeed) noexcept
+    {
+        m_seed = (seed == Random::kRandomSeed)
+              ? time(nullptr)
+              : seed;
+
+        m_isUsingRandomSeed = (seed == kRandomSeed);
+        m_rnd.seed(m_seed);
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
@@ -173,21 +231,49 @@ public:
     ///   The actual seed used in this object - If Random was created
     ///   using kRandomSeed it will the chosen seed, otherwise will
     ///   return the argument used in the CTOR.
-    int getSeed() const;
+    inline int
+    GetSeed() const
+    {
+        return m_seed;
+    }
 
     ///-------------------------------------------------------------------------
     /// @brief
     ///   Checks if CTOR was initialized with kRandomSeed.
     /// @returns
     ///   True if kRandomSeed was used, False otherwise.
-    bool isUsingRandomSeed() const;
+    inline bool
+    IsUsingRandomSeed() const
+    {
+        return m_isUsingRandomSeed;
+    }
 
 
     //------------------------------------------------------------------------//
     // Private Methods                                                        //
     //------------------------------------------------------------------------//
 private:
-    inline void resetRange(int min, int max);
+    inline void
+    ResetRange(int min, int max) noexcept
+    {
+        ACOW_ASSERT(
+            min <= max,
+            "Invalid values given - Min: (%d) - Max: (%d)",
+            min,
+            max
+        );
+
+        // Just make sure that in runtime we give valid results
+        // no matter what user passed to us...
+        if(min > max) { std::swap(min, max); }
+
+        // Reset the range..
+        if(m_dist.min() != min || m_dist.max() != max) {
+            m_dist.param(
+                std::uniform_int_distribution<int>::param_type(min, max)
+            );
+        }
+    }
 
 
     //------------------------------------------------------------------------//
@@ -204,5 +290,5 @@ private:
     IntegerDistributionType m_randomDist;
 };
 
-} // namespace Random
+} // namespace RandomUtils
 } // namespace acow
