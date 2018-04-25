@@ -8,7 +8,7 @@
 ##                    |__| |__||_______||_______||__| |__|                    ##
 ##                             www.amazingcow.com                             ##
 ##  File      : CMakeLists.txt                                                ##
-##  Project   : CoreRandom                                                    ##
+##  Project   : acow_RandomUtils                                              ##
 ##  Date      : Feb 07, 2018                                                  ##
 ##  License   : GPLv3                                                         ##
 ##  Author    : n2omatt <n2omatt@amazingcow.com>                              ##
@@ -17,11 +17,38 @@
 ##  Description :                                                             ##
 ##                                                                            ##
 ##---------------------------------------------------------------------------~##
-
 cmake_minimum_required(VERSION 3.5)
 
-add_library(CoreRandom
-    CoreRandom/src/Random.cpp
+
+##----------------------------------------------------------------------------##
+## Project                                                                    ##
+##----------------------------------------------------------------------------##
+set(PROJECT acow_RandomUtils)
+project(${PROJECT})
+
+
+##----------------------------------------------------------------------------##
+## Sources                                                                    ##
+##----------------------------------------------------------------------------##
+##------------------------------------------------------------------------------
+## Sources
+set(SOURCES
+    acow/src/Random.cpp
 )
 
-target_include_directories(CoreRandom PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+##----------------------------------------------------------------------------##
+## Library                                                                    ##
+##----------------------------------------------------------------------------##
+##------------------------------------------------------------------------------
+## Lib.
+add_library(${PROJECT} ${SOURCES})
+
+##-----------------------------------------------------------------------------
+## Include directories.
+target_include_directories(${PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+##------------------------------------------------------------------------------
+## Dependencies.
+target_link_libraries(${PROJECT} LINK_PUBLIC acow_c_goodies  )
+target_link_libraries(${PROJECT} LINK_PUBLIC acow_cpp_goodies)
