@@ -23,11 +23,11 @@
 // Version                                                                    //
 //----------------------------------------------------------------------------//
 // The core version number.
-#define ACOW_RANDOM_VERSION_MAJOR    "0"
-#define ACOW_RANDOM_VERSION_MINOR    "5"
-#define ACOW_RANDOM_VERSION_REVISION "0"
+#define ACOW_RANDOM_UTILS_VERSION_MAJOR    "0"
+#define ACOW_RANDOM_UTILS_VERSION_MINOR    "5"
+#define ACOW_RANDOM_UTILS_VERSION_REVISION "0"
 
-#define ACOW_RANDOM_VERSION           \
-        ACOW_RANDOM_VERSION_MAJOR "." \
-        ACOW_RANDOM_VERSION_MINOR "." \
-        ACOW_RANDOM_VERSION_REVISION
+#define ACOW_RANDOM_UTILS_VERSION           \
+        ACOW_RANDOM_UTILS_VERSION_MAJOR "." \
+        ACOW_RANDOM_UTILS_VERSION_MINOR "." \
+        ACOW_RANDOM_UTILS_VERSION_REVISION
